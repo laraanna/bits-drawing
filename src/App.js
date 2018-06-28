@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
 			<div className="Header"></div>
 
-				<MainCanvas />
+				<Canvas />
 
       </div>
     );
