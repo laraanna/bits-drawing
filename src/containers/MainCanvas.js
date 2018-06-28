@@ -45,8 +45,8 @@ class MainCanvas extends Component {
 
 			 // Make a New Canvas
 			 let canvas = this.the_canvas = new fabric.Canvas('main-canvas', {
-					 height:500,
-					 width:550,
+					 height:200,
+					 width:250,
 			 });
 
 			canvas.isDrawingMode = true;
@@ -61,8 +61,8 @@ class MainCanvas extends Component {
 			 let center = canvas.getCenter();
 			 image.onload = function(){
 			 	canvas.setBackgroundImage(new fabric.Image(image,{
-	        scaleX:0.2,
-	        scaleY:0.2,
+	        scaleX:0.11,
+	        scaleY:0.11,
 					top: center.top,
 		 			left: center.left,
 	        originX: 'center',
@@ -138,12 +138,12 @@ class MainCanvas extends Component {
 					<div className="Actions">
 						<div onClick={this.clear}>CLEAR</div>
 						<div onClick={this.undo}>UNDO</div>
-						<SaveButton url={this.state.url}/>
+						<div onClick={this.save}>SAVE</div>
 					</div>
 
 					</div>
 
-					<div onClick={this.save}>SAAAAAVE</div>
+
 
 
 
