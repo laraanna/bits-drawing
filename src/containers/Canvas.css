@@ -1,0 +1,96 @@
+.Colors {
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	right: 0;
+
+}
+
+.Colors > div {
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	margin: 5px;
+	border-radius: 50%;
+}
+
+.Actions {
+	/* border: 2px solid black; */
+
+}
+
+.Actions > div {
+	border: 1px solid black;
+	display: block;
+	width: 50px;
+	font-size: 12px;
+	padding: 5px 5px;
+	margin-top: 10px;
+	font-family: "Helvetica Neue";
+
+}
+
+.Toolbox p {
+	text-align: left;
+	margin-bottom: 30px;
+	font-size: 17px;
+	font-family: "Helvetica Neue";
+}
+
+
+
+.Actions > div:hover {
+	cursor: pointer;
+	background-color: #718A9A;
+	/* color: white; */
+}
+
+
+.Canvas {
+	position: relative;
+}
+
+.Toolbox {
+	position: absolute;
+	bottom:60px;
+	right: -250px;
+	width: 220px;
+}
+
+
+@media only screen and (max-width: 600px) {
+		.Canvas {
+			margin-top: 50px !important;
+		}
+
+		.Toolbox {
+			position: relative;
+			left: 0;
+			width: 80vw;
+			margin: 0 auto;
+			margin-top: 50px;
+		}
+		.Toolbox p {
+			margin-top: 100px;
+			text-align: center;
+		}
+		.Actions > div {
+			/* border: 1px solid black; */
+			display: inline-block;
+			/* margin-left: 30px; */
+
+		}
+		.Actions > div:nth-child(2) {
+			/* border: 3px solid red; */
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		.Actions {
+			width: 80vw;
+		}
+
+		.Colors {
+			margin-bottom: 30px;
+		}
+
+}

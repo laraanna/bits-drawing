@@ -1,16 +1,31 @@
 {
   "name": "bits-draw",
   "version": "0.1.0",
+	"engines": {
+		"node": "9.8.0",
+		"yarn": "1.6.0"
+	},
   "private": true,
   "dependencies": {
+    "cors": "^2.8.4",
+    "fabric": "^2.3.3",
+    "fabric-touch": "^2.0.1",
     "react": "^16.4.1",
+    "react-canvas-draw": "^0.1.9",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-redux": "^5.0.7",
+    "react-responsive": "^4.1.0",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "superagent": "^3.8.3"
   }
 }
