@@ -43,8 +43,8 @@ class MainCanvas extends Component {
 
 			 // Make a New Canvas
 			 let canvas = this.the_canvas = new fabric.Canvas('main-canvas', {
-					 height:500,
-					 width:550,
+					 height:200,
+					 width:250,
 			 });
 
 			canvas.isDrawingMode = true;
@@ -59,8 +59,8 @@ class MainCanvas extends Component {
 			 let center = canvas.getCenter();
 			 image.onload = function(){
 			 	canvas.setBackgroundImage(new fabric.Image(image,{
-	        scaleX:0.2,
-	        scaleY:0.2,
+	        scaleX:0.11,
+	        scaleY:0.11,
 					top: center.top,
 		 			left: center.left,
 	        originX: 'center',
@@ -80,9 +80,10 @@ class MainCanvas extends Component {
 		let userStatue = document.getElementById('main-canvas').toDataURL();
 
  		this.setState({url: userStatue});
+		// console.log(this.state.url);
+		console.log('hi');
 
-		this.the_canvas.freeDrawingBrush.color = this.state.color
-		this.the_canvas.requestRenderAll();
+		// this.the_canvas.freeDrawingBrush.color = this.state.color
 
  	}
 
