@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {fabric} from 'fabric'
 import PropTypes from 'prop-types'
 import SaveButton from "../components/SaveButton"
+import createStatue from "../actions/statues/create";
+import { connect } from "react-redux";
 import './Canvas.css'
 
 
@@ -43,8 +45,8 @@ class MainCanvas extends Component {
 
 			 // Make a New Canvas
 			 let canvas = this.the_canvas = new fabric.Canvas('main-canvas', {
-					 height:200,
-					 width:250,
+					 height:500,
+					 width:550,
 			 });
 
 			canvas.isDrawingMode = true;
@@ -59,8 +61,8 @@ class MainCanvas extends Component {
 			 let center = canvas.getCenter();
 			 image.onload = function(){
 			 	canvas.setBackgroundImage(new fabric.Image(image,{
-	        scaleX:0.11,
-	        scaleY:0.11,
+	        scaleX:0.2,
+	        scaleY:0.2,
 					top: center.top,
 		 			left: center.left,
 	        originX: 'center',
@@ -104,6 +106,13 @@ class MainCanvas extends Component {
 			this.the_canvas.freeDrawingBrush.color = this.value;
 		}
 
+		save = () => {
+			let statueImage = document.getElementById('main-canvas').toDataURL();
+			this.props.createStatue({url: statueImage});
+			console.log('save');
+
+		}
+
 
 		render() {
 		    return(
@@ -134,6 +143,8 @@ class MainCanvas extends Component {
 
 					</div>
 
+					<div onClick={this.save}>SAAAAAVE</div>
+
 
 
 
@@ -142,4 +153,7 @@ class MainCanvas extends Component {
 		    )
 		 }
 }
-export default MainCanvas
+
+const mapDispatchToProps = { createStatue: createStatue };
+
+export default connect(null, mapDispatchToProps)(MainCanvas);
