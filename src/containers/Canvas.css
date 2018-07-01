@@ -1,6 +1,19 @@
+.Header {
+	margin: 0px auto;
+	margin-bottom: 80px;
+	width: 100% !important;
+	text-align: center;
+	height: 60px;
+	background-image: url('../title.jpg') !important;
+	background-size: contain !important;
+	background-position: center;
+	background-repeat: no-repeat !important;
+
+}
+
 .Colors {
 	position: absolute;
-	bottom: -50px;
+	bottom: -120px;
 	left: 0;
 	right: 0;
 
@@ -48,6 +61,9 @@
 
 .Canvas {
 	position: relative;
+	display: inline-block;
+	margin: 0px 80px auto !important;
+	width: 450px ;
 }
 
 .Toolbox {
@@ -57,10 +73,16 @@
 	width: 220px;
 }
 
+canvas:hover {
+	cursor: url('../pencil_sm.png') 4 30 , pointer;
+}
+
 
 @media only screen and (max-width: 600px) {
 		.Canvas {
 			margin-top: 50px !important;
+			width: 100%;
+
 		}
 
 		.Toolbox {

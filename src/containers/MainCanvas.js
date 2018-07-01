@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import SaveButton from "../components/SaveButton"
 import createStatue from "../actions/statues/create";
 import { connect } from "react-redux";
+import MediaQuery from 'react-responsive';
+import { push } from 'react-router-redux'
 import './Canvas.css'
 
 
@@ -45,8 +47,8 @@ class MainCanvas extends Component {
 
 			 // Make a New Canvas
 			 let canvas = this.the_canvas = new fabric.Canvas('main-canvas', {
-					 height:200,
-					 width:250,
+					 // width:550,
+					 // height:500,
 			 });
 
 			canvas.isDrawingMode = true;
@@ -59,22 +61,37 @@ class MainCanvas extends Component {
 
 
 			 let center = canvas.getCenter();
-			 image.onload = function(){
-			 	canvas.setBackgroundImage(new fabric.Image(image,{
-	        scaleX:0.11,
-	        scaleY:0.11,
-					top: center.top,
-		 			left: center.left,
-	        originX: 'center',
-	        originY: 'center'
-				}),canvas.renderAll.bind(canvas));
+			 let mq = window.matchMedia("screen and (min-width: 600px)");
+
+			 if (mq.matches) {
+				 image.onload = function(){
+				 	canvas.setBackgroundImage(new fabric.Image(image,{
+		        scaleX:0.2,
+		        scaleY:0.2,
+						top: center.top,
+			 			left: center.left,
+		        originX: 'center',
+		        originY: 'center'
+					}),canvas.renderAll.bind(canvas));
+				}
+			} else {
+				image.onload = function(){
+				 canvas.setBackgroundImage(new fabric.Image(image,{
+					 scaleX:0.15,
+					 scaleY:0.15,
+					 top: center.top,
+					 left: center.left,
+					 originX: 'center',
+					 originY: 'center'
+				 }),canvas.renderAll.bind(canvas));
+			 }
 			}
+
 
 
 			canvas.on('object:added',this.handleUrl)
 
 	 }
-
 
 
 	 handleUrl = () =>  {
@@ -110,6 +127,7 @@ class MainCanvas extends Component {
 			let statueImage = document.getElementById('main-canvas').toDataURL();
 			this.props.createStatue({url: statueImage});
 			console.log('save');
+			this.props.push('/thankyou')
 
 		}
 
@@ -117,7 +135,15 @@ class MainCanvas extends Component {
 		render() {
 		    return(
 		      <div className="Canvas">
-					<canvas id= 'main-canvas'> </canvas>
+					<div className="Header"></div>
+
+					<MediaQuery query='(min-device-width: 600px)'>
+						<canvas width="400" height="350" id= 'main-canvas'> </canvas>
+					</MediaQuery>
+
+					<MediaQuery query='(max-device-width: 600px)'>
+						<canvas width="280" height="300" id= 'main-canvas'> </canvas>
+					</MediaQuery>
 
 					<div className="Colors">
 					{data1.map((a, i) =>
@@ -154,6 +180,6 @@ class MainCanvas extends Component {
 		 }
 }
 
-const mapDispatchToProps = { createStatue: createStatue };
+const mapDispatchToProps = { createStatue: createStatue, push };
 
 export default connect(null, mapDispatchToProps)(MainCanvas);
