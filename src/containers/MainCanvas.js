@@ -61,7 +61,7 @@ class MainCanvas extends Component {
 
 
 			 imageDesktop.src = "https://res.cloudinary.com/laraanna/image/upload/v1529250888/mix/figure.png"
-			 imageMobile.src = "https://res.cloudinary.com/laraanna/image/upload/v1530455407/BITS_artwork.jpg"
+			 imageMobile.src = "https://res.cloudinary.com/laraanna/image/upload/v1530456127/Bits_Artwork.jpg"
 
 
 			 let center = canvas.getCenter();
@@ -81,8 +81,8 @@ class MainCanvas extends Component {
 			} else {
 				imageMobile.onload = function(){
 				 canvas.setBackgroundImage(new fabric.Image(imageMobile,{
-					 scaleX:0.22,
-					 scaleY:0.22,
+					 scaleX:0.23,
+					 scaleY:0.23,
 					 top: center.top,
 					 left: center.left,
 					 originX: 'center',
@@ -146,7 +146,7 @@ class MainCanvas extends Component {
 					</MediaQuery>
 
 					<MediaQuery query='(max-device-width: 600px)'>
-						<canvas width="280" height="800" id= 'main-canvas'> </canvas>
+						<canvas width="220" height="840" id= 'main-canvas'> </canvas>
 					</MediaQuery>
 
 					<div className="Colors">
