@@ -47,7 +47,6 @@ class MainCanvas extends Component {
 
 			 // Make a New Canvas
 			 let canvas = this.the_canvas = new fabric.Canvas('main-canvas', {
-					 // width:550,
 					 // height:500,
 			 });
 
@@ -55,6 +54,7 @@ class MainCanvas extends Component {
 			canvas.freeDrawingCursor = this.state.color
 
 			canvas.freeDrawingBrush.color = this.state.color
+			canvas.freeDrawingBrush.width= 2.5
 
 
 			 image.src = "https://res.cloudinary.com/laraanna/image/upload/v1529250888/mix/figure.png"
