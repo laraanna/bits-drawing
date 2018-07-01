@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Iowan';
+    src: url('../Iowan.ttc');
+}
+
+
 .ThankYou {
 	position: relative;
 	width: 100%;
@@ -23,4 +29,14 @@
 	max-width: 100%;
 	width: auto;
 	height: auto;
+	margin-top: -50px;
+}
+
+
+.ThankYou .wrapper p {
+	font-family: 'Iowan';
+	font-weight: bold;
+	font-size: 18px;
+
+
 }
