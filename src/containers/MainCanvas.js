@@ -183,7 +183,7 @@ class MainCanvas extends Component {
 					</MediaQuery>
 
 					<MediaQuery query='(max-device-width: 600px)'>
-					<p className="instruction-text">Use your finger tip to <b>draw</b> your perfect pair of undies.</p>
+					<p className="instruction-text">Use your fingertip to <b>draw</b> your perfect pair of undies.</p>
 					</MediaQuery>
 
 					<div className="Actions">
