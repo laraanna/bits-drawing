@@ -1,6 +1,27 @@
+
+@font-face {
+    font-family: 'Iowan';
+    src: url('../Iowan.ttc');
+}
+
+
+.Icon {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	width: 150px;
+	height: 150px;
+	/* border: 2px solid blue; */
+	background-image: url('https://res.cloudinary.com/laraanna/image/upload/v1530461949/icon.png') !important;
+	background-size: contain !important;
+	background-position: center;
+	background-repeat: no-repeat !important;
+
+}
+
 .Header {
 	margin: 0px auto;
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 	width: 100% !important;
 	text-align: center;
 	height: 60px;
@@ -14,7 +35,7 @@
 
 .Colors {
 	position: absolute;
-	bottom: -120px;
+	bottom: -90px;
 	left: 0;
 	right: 0;
 
@@ -30,17 +51,25 @@
 
 .Actions {
 	/* border: 2px solid black; */
+	text-align: left;
 
 }
 
 .Actions > div {
-	border: 1px solid black;
-	display: block;
-	width: 50px;
-	font-size: 12px;
-	padding: 5px 5px;
+	display: inline-block;
+	/* width: 50px; */
+	/* padding: 5px 5px; */
 	margin-top: 10px;
-	font-family: "Helvetica Neue";
+	margin-right: 20px;
+	border-bottom: 2px solid transparent;
+
+}
+
+.Actions > div p {
+	font-family: "Arial";
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom: 2px;
 
 }
 
@@ -48,15 +77,14 @@
 	text-align: left;
 	margin-bottom: 30px;
 	font-size: 17px;
-	font-family: "Helvetica Neue";
+	font-family: "Iowan";
 }
 
 
 
 .Actions > div:hover {
 	cursor: pointer;
-	background-color: #718A9A;
-	/* color: white; */
+	border-bottom: 2px solid black;
 }
 
 
@@ -70,8 +98,8 @@
 
 .Toolbox {
 	position: absolute;
-	bottom:60px;
-	right: -250px;
+	bottom:100px;
+	right: -280px;
 	width: 220px;
 }
 
@@ -81,10 +109,20 @@ canvas:hover {
 
 
 @media only screen and (max-width: 600px) {
+		.Icon {
+			display: none;
+
+		}
+
+
 		.Canvas {
 			margin-top: 50px !important;
 			width: 100%;
 
+		}
+
+		canvas {
+			margin-top: 50px;
 		}
 
 		.canvas-container {
@@ -107,23 +145,27 @@ canvas:hover {
 			margin-top: 100px;
 			text-align: center;
 		}
-		.Actions > div {
-			/* border: 1px solid black; */
-			display: inline-block;
-			/* margin-left: 30px; */
+		.Actions > div p{
+			margin-top: 0;
 
 		}
 		.Actions > div:nth-child(2) {
-			/* border: 3px solid red; */
-			margin-left: 10px;
-			margin-right: 10px;
+			/* margin-left: 10px;
+			margin-right: 10px; */
 		}
 		.Actions {
-			width: 80vw;
+			margin: 0 auto;
+			text-align: center;
 		}
 
 		.Colors {
-			margin-bottom: 100px;
+			position: relative;
+			bottom: 0px;
+			margin-top: -80px;
+		}
+
+		.instruction-text {
+			margin-top: 150px !important;
 		}
 
 		.Header {

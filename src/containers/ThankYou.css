@@ -1,0 +1,26 @@
+.ThankYou {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display:block;
+}
+
+.ThankYou .wrapper{
+	max-height: 50%;
+	max-width: 100%;
+	width: auto;
+  height: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.ThankYou .wrapper img {
+	max-height: 100%;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}

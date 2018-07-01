@@ -70,8 +70,8 @@ class MainCanvas extends Component {
 			 if (mq.matches) {
 				 imageDesktop.onload = function(){
 				 	canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
-		        scaleX:0.2,
-		        scaleY:0.2,
+		        scaleX:0.235,
+		        scaleY:0.235,
 						top: center.top,
 			 			left: center.left,
 		        originX: 'center',
@@ -79,6 +79,15 @@ class MainCanvas extends Component {
 					}),canvas.renderAll.bind(canvas));
 				}
 			} else {
+				let text = document.getElementsByClassName('Toolbox')[0]
+				let header = document.getElementsByClassName('Header')[0]
+				let colors = document.getElementsByClassName('Colors')[0]
+
+				this.insertAfter(header,text)
+				this.insertAfter(text,colors)
+
+
+				console.log(text);
 				imageMobile.onload = function(){
 				 canvas.setBackgroundImage(new fabric.Image(imageMobile,{
 					 scaleX:0.23,
@@ -97,7 +106,10 @@ class MainCanvas extends Component {
 
 	 }
 
+	 insertAfter = (referenceNode, newNode) => {
+		 referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 
+	 }
 	 handleUrl = () =>  {
 
 		let userStatue = document.getElementById('main-canvas').toDataURL();
@@ -139,10 +151,12 @@ class MainCanvas extends Component {
 		render() {
 		    return(
 		      <div className="Canvas">
+					<div className="Icon"></div>
+
 					<div className="Header"></div>
 
 					<MediaQuery query='(min-device-width: 600px)'>
-						<canvas width="400" height="350" id= 'main-canvas'> </canvas>
+						<canvas width="500" height="450" id= 'main-canvas'> </canvas>
 					</MediaQuery>
 
 					<MediaQuery query='(max-device-width: 600px)'>
@@ -165,17 +179,17 @@ class MainCanvas extends Component {
 
 					<MediaQuery query='(min-device-width: 600px)'>
 
-					<p>Use your cursor to <b>draw</b> your perfect pair of undies.</p>
+					<p className="instruction-text">Use your cursor to <b>draw</b> your perfect pair of undies.</p>
 					</MediaQuery>
 
 					<MediaQuery query='(max-device-width: 600px)'>
-					<p>Use your finger tip to <b>draw</b> your perfect pair of undies.</p>
+					<p className="instruction-text">Use your finger tip to <b>draw</b> your perfect pair of undies.</p>
 					</MediaQuery>
 
 					<div className="Actions">
-						<div onClick={this.clear}>CLEAR</div>
-						<div onClick={this.undo}>UNDO</div>
-						<div onClick={this.save}>SAVE</div>
+						<div onClick={this.clear}><p>CLEAR</p></div>
+						<div onClick={this.undo}><p>UNDO</p></div>
+						<div onClick={this.save}><p>SAVE</p></div>
 					</div>
 
 					</div>
