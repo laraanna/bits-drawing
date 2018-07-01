@@ -107,6 +107,10 @@ canvas:hover {
 	cursor: url('../pencil_sm.png') 4 30 , pointer;
 }
 
+.instruction-text span{
+	font-style: italic;
+}
+
 
 @media only screen and (max-width: 600px) {
 		.Icon {
@@ -123,7 +127,7 @@ canvas:hover {
 
 		canvas {
 			margin-top: 50px;
-			margin-bottom: 50px;
+			margin-bottom: 80px;
 		}
 
 		.canvas-container {
