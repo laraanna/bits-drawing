@@ -42,8 +42,11 @@ class MainCanvas extends Component {
 	componentDidMount = () =>{
 		console.log(this.props.avatarImage);
 
-			let image = new Image()
-			image.crossOrigin = "Anonymous";
+			let imageDesktop = new Image()
+			imageDesktop.crossOrigin = "Anonymous";
+
+			let imageMobile = new Image()
+			imageMobile.crossOrigin = "Anonymous";
 
 			 // Make a New Canvas
 			 let canvas = this.the_canvas = new fabric.Canvas('main-canvas', {
@@ -57,15 +60,16 @@ class MainCanvas extends Component {
 			canvas.freeDrawingBrush.width= 2.5
 
 
-			 image.src = "https://res.cloudinary.com/laraanna/image/upload/v1529250888/mix/figure.png"
+			 imageDesktop.src = "https://res.cloudinary.com/laraanna/image/upload/v1529250888/mix/figure.png"
+			 imageMobile.src = "https://res.cloudinary.com/laraanna/image/upload/v1530455407/BITS_artwork.jpg"
 
 
 			 let center = canvas.getCenter();
 			 let mq = window.matchMedia("screen and (min-width: 600px)");
 
 			 if (mq.matches) {
-				 image.onload = function(){
-				 	canvas.setBackgroundImage(new fabric.Image(image,{
+				 imageDesktop.onload = function(){
+				 	canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
 		        scaleX:0.2,
 		        scaleY:0.2,
 						top: center.top,
@@ -75,10 +79,10 @@ class MainCanvas extends Component {
 					}),canvas.renderAll.bind(canvas));
 				}
 			} else {
-				image.onload = function(){
-				 canvas.setBackgroundImage(new fabric.Image(image,{
-					 scaleX:0.15,
-					 scaleY:0.15,
+				imageMobile.onload = function(){
+				 canvas.setBackgroundImage(new fabric.Image(imageMobile,{
+					 scaleX:0.22,
+					 scaleY:0.22,
 					 top: center.top,
 					 left: center.left,
 					 originX: 'center',
@@ -142,7 +146,7 @@ class MainCanvas extends Component {
 					</MediaQuery>
 
 					<MediaQuery query='(max-device-width: 600px)'>
-						<canvas width="280" height="300" id= 'main-canvas'> </canvas>
+						<canvas width="280" height="800" id= 'main-canvas'> </canvas>
 					</MediaQuery>
 
 					<div className="Colors">
@@ -159,7 +163,14 @@ class MainCanvas extends Component {
 
 					<div className="Toolbox">
 
+					<MediaQuery query='(min-device-width: 600px)'>
+
 					<p>Use your cursor to <b>draw</b> your perfect pair of undies.</p>
+					</MediaQuery>
+
+					<MediaQuery query='(max-device-width: 600px)'>
+					<p>Use your finger tip to <b>draw</b> your perfect pair of undies.</p>
+					</MediaQuery>
 
 					<div className="Actions">
 						<div onClick={this.clear}>CLEAR</div>

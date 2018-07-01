@@ -33,6 +33,7 @@ class Canvas extends PureComponent {
 		const {statues} = this.props
     return (
       <div className="Gallary">
+			<p>hi</p>
 
 
 			{statues.map(this.renderStatues)}
