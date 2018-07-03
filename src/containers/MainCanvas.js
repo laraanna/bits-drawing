@@ -65,20 +65,24 @@ class MainCanvas extends Component {
 
 
 			 let center = canvas.getCenter();
-			 let mq = window.matchMedia("screen and (min-width: 600px)");
+			 let mq = window.matchMedia("screen and (max-width: 500px)");
+			 let mqBigScreen = window.matchMedia("screen and (min-width: 1824px)");
+			 let mqTablet = window.matchMedia("screen and (min-width: 500px) and (max-width: 1100px)");
 
-			 if (mq.matches) {
+			 if (mqBigScreen.matches) {
+				 console.log('biig');
 				 imageDesktop.onload = function(){
 				 	canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
-		        scaleX:0.235,
-		        scaleY:0.235,
+		        scaleX:0.4,
+		        scaleY:0.4,
 						top: center.top,
 			 			left: center.left,
 		        originX: 'center',
 		        originY: 'center'
 					}),canvas.renderAll.bind(canvas));
 				}
-			} else {
+			} else if (mq.matches){
+				console.log('smaal');
 				let text = document.getElementsByClassName('Toolbox')[0]
 				let header = document.getElementsByClassName('Header')[0]
 				let colors = document.getElementsByClassName('Colors')[0]
@@ -86,10 +90,33 @@ class MainCanvas extends Component {
 				this.insertAfter(header,text)
 				this.insertAfter(text,colors)
 
-
-				console.log(text);
 				imageMobile.onload = function(){
 				 canvas.setBackgroundImage(new fabric.Image(imageMobile,{
+					 scaleX:0.235,
+					 scaleY:0.235,
+					 top: center.top,
+					 left: center.left,
+					 originX: 'center',
+					 originY: 'center'
+				 }),canvas.renderAll.bind(canvas));
+			 }
+		 } else if (mqTablet.matches){
+			console.log('tablet');
+			imageMobile.onload = function(){
+			 canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
+				 scaleX:0.235,
+				 scaleY:0.235,
+				 top: center.top,
+				 left: center.left,
+				 originX: 'center',
+				 originY: 'center'
+			 }),canvas.renderAll.bind(canvas));
+		 }
+			} else {
+				console.log('rest');
+
+				imageMobile.onload = function(){
+				 canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
 					 scaleX:0.23,
 					 scaleY:0.23,
 					 top: center.top,
@@ -155,13 +182,27 @@ class MainCanvas extends Component {
 
 					<div className="Header"></div>
 
-					<MediaQuery query='(min-device-width: 600px)'>
-						<canvas width="500" height="450" id= 'main-canvas'> </canvas>
+
+
+
+						 <MediaQuery minWidth={1700} >
+  						 <canvas width="900" height="850" id= 'main-canvas'> </canvas>
+  					 </MediaQuery>
+
+
+					 <MediaQuery minWidth={1100} maxWidth={1700}>
+						 <canvas width="500" height="450" id= 'main-canvas'> </canvas>
+					 </MediaQuery>
+
+
+					 <MediaQuery minWidth={500} maxWidth={1100}>
+						 <canvas width="500" height="450" id= 'main-canvas'> </canvas>
+					 </MediaQuery>
+
+					<MediaQuery maxWidth={500}>
+						<canvas width="220" height="850" id= 'main-canvas'> </canvas>
 					</MediaQuery>
 
-					<MediaQuery query='(max-device-width: 600px)'>
-						<canvas width="220" height="840" id= 'main-canvas'> </canvas>
-					</MediaQuery>
 
 					<div className="Colors">
 					{data1.map((a, i) =>

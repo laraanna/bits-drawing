@@ -112,8 +112,33 @@ canvas:hover {
 	font-size: 14px;
 }
 
+@media only screen and (min-width: 500px) and (max-width: 1100px){
+	.Header {
+		margin-bottom: 120px;
+		height: 80px;
+	}
+	.Toolbox {
+		position: relative;
+		left: 0;
+		margin: 110px auto;
+		width: 100%;
+	}
+	.instruction-text {
+		position: relative;
+	}
+	.Colors {
+		bottom: 100px;
+	}
+	.Toolbox p {
+		text-align: center;
+	}
+	.Actions {
+		text-align: center;
+	}
 
-@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 500px) {
 		.Icon {
 			display: none;
 
@@ -122,7 +147,7 @@ canvas:hover {
 
 		.Canvas {
 			margin-top: 50px !important;
-			width: 100%;
+			width: 100% !important;
 
 		}
 
@@ -135,6 +160,7 @@ canvas:hover {
 			margin: 0 auto;
 			text-align: center;
 			width: 100%;
+
 			/* -webkit-transform : scale(0.5);
 			-webkit-transform-origin : 0 0; */
 
@@ -177,5 +203,52 @@ canvas:hover {
 		.Header {
 			margin-bottom: 40px;
 		}
+
+		.instruction-text span{
+			font-size: 16px;
+		}
+
+}
+
+@media only screen and (min-width: 1824px) {
+	.Canvas {
+		margin-top: 50px !important;
+		width: 1700px;
+
+	}
+
+	.canvas-container {
+		margin: 0 auto;
+	}
+
+	.Colors {
+		bottom: -150px;
+	}
+
+	.Colors > div {
+		width: 55px;
+		height: 55px;
+		margin: 14px;
+	}
+
+	.Toolbox {
+		bottom:250px;
+		right: 0px;
+		width: 320px;
+	}
+
+	.Header {
+		height: 120px;
+
+	}
+	.Actions > div p {
+		font-size: 16px;
+		/* margin-bottom: 2px; */
+
+	}
+
+	.Toolbox p {
+		font-size: 18px;
+	}
 
 }

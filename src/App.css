@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+	box-sizing: border-box;
 }
 
 @font-face {
@@ -19,28 +20,16 @@
 }
 
 
-/* .App h1 {
-	font-family: 'Plantin';
-	font-weight: bold;
-	font-size: 62px;
-	margin-bottom: 0;
-	margin-top: 20px;
-} */
 
+@media only screen and (min-width: 1824px) {
 
-
-
-
+}
 
 @media only screen and (max-width: 600px) {
 		.App {
 			margin: 0 auto;
-		
+
 		}
-
-
-
-
 }
 
 
