@@ -49,6 +49,10 @@
 	border-radius: 50%;
 }
 
+.Colors > div:hover {
+	cursor: pointer;
+}
+
 .Actions {
 	/* border: 2px solid black; */
 	text-align: left;
@@ -105,7 +109,10 @@
 
 canvas:hover {
 	cursor: url('../pencil_sm.png') 4 30 , pointer;
+
 }
+
+
 
 .instruction-text span{
 	font-style: italic;
@@ -137,7 +144,26 @@ canvas:hover {
 	}
 
 }
+@media only screen and (min-width: 1600px) and (max-width: 1824px){
+	.Header {
+		margin-bottom: 100px;
+		height: 80px;
+	}
 
+	.Colors {
+		bottom: -140px;
+	}
+
+	.Canvas {
+		width: 600px;
+	}
+
+	.Colors > div {
+		width: 50px;
+		height: 50px;
+		margin: 14px;
+	}
+}
 @media only screen and (max-width: 500px) {
 		.Icon {
 			display: none;

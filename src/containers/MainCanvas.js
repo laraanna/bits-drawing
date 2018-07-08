@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 import MediaQuery from 'react-responsive';
 import { push } from 'react-router-redux'
 import './Canvas.css'
+import ReactResizeDetector from 'react-resize-detector';
+
 
 
 const data1 = [
@@ -33,14 +35,43 @@ class MainCanvas extends Component {
     this.state = {
 			 url: '',
 			 color : "#C34537",
+			 windowWidth: window.innerWidth,
     };
   }
-	static propTypes = {
 
+
+	getInitialState() {
+    return {windowWidth: window.innerWidth};
+  }
+
+
+
+	handleResize(e) {
+    // this.setState({windowWidth: window.innerWidth});
+		console.log('hi');
+		window.location.reload();
+  }
+
+	componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
 	componentDidMount = () =>{
+
+		window.addEventListener('resize', this.handleResize);
+
 		console.log(this.props.avatarImage);
+		let width = 500;
+	  let height = 450;
+	  let scaleFactor = 1;
+		let backgroundScale = 0.22;
+		let bgScaleFactor = 1;
+
+
+
+
+
+
 
 			let imageDesktop = new Image()
 			imageDesktop.crossOrigin = "Anonymous";
@@ -50,8 +81,10 @@ class MainCanvas extends Component {
 
 			 // Make a New Canvas
 			 let canvas = this.the_canvas = new fabric.Canvas('main-canvas', {
-					 // height:500,
+
 			 });
+
+
 
 			canvas.isDrawingMode = true;
 			canvas.freeDrawingCursor = this.state.color
@@ -60,83 +93,95 @@ class MainCanvas extends Component {
 			canvas.freeDrawingBrush.width= 2.5
 
 
-			 imageDesktop.src = "https://res.cloudinary.com/laraanna/image/upload/v1529250888/mix/figure.png"
-			 imageMobile.src = "https://res.cloudinary.com/laraanna/image/upload/v1530456127/Bits_Artwork.jpg"
+			imageDesktop.src = "https://res.cloudinary.com/laraanna/image/upload/v1529250888/mix/figure.png"
+			imageMobile.src = "https://res.cloudinary.com/laraanna/image/upload/v1530456127/Bits_Artwork.jpg"
 
 
-			 let center = canvas.getCenter();
+			 // let center = canvas.getCenter();
 			 let mq = window.matchMedia("screen and (max-width: 500px)");
 			 let mqBigScreen = window.matchMedia("screen and (min-width: 1824px)");
+			 let mqMiddle = window.matchMedia("screen and (min-width: 1600px) and (max-width: 1824px)");
 			 let mqTablet = window.matchMedia("screen and (min-width: 500px) and (max-width: 1100px)");
 
-			 if (mqBigScreen.matches) {
-				 console.log('biig');
-				 imageDesktop.onload = function(){
-				 	canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
-		        scaleX:0.4,
-		        scaleY:0.4,
-						top: center.top,
-			 			left: center.left,
-		        originX: 'center',
-		        originY: 'center'
-					}),canvas.renderAll.bind(canvas));
-				}
-			} else if (mq.matches){
-				console.log('smaal');
-				let text = document.getElementsByClassName('Toolbox')[0]
-				let header = document.getElementsByClassName('Header')[0]
-				let colors = document.getElementsByClassName('Colors')[0]
-
-				this.insertAfter(header,text)
-				this.insertAfter(text,colors)
-
-				imageMobile.onload = function(){
-				 canvas.setBackgroundImage(new fabric.Image(imageMobile,{
-					 scaleX:0.235,
-					 scaleY:0.235,
-					 top: center.top,
-					 left: center.left,
-					 originX: 'center',
-					 originY: 'center'
-				 }),canvas.renderAll.bind(canvas));
-			 }
-		 } else if (mqTablet.matches){
-			console.log('tablet');
-			imageMobile.onload = function(){
-			 canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
-				 scaleX:0.235,
-				 scaleY:0.235,
-				 top: center.top,
-				 left: center.left,
-				 originX: 'center',
-				 originY: 'center'
-			 }),canvas.renderAll.bind(canvas));
-		 }
-			} else {
-				console.log('rest');
-
-				imageMobile.onload = function(){
-				 canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
-					 scaleX:0.23,
-					 scaleY:0.23,
-					 top: center.top,
-					 left: center.left,
-					 originX: 'center',
-					 originY: 'center'
-				 }),canvas.renderAll.bind(canvas));
-			 }
+			 if(mqTablet.matches) {
+	 				 scaleFactor = 0.9;
+	 		} else if (mqBigScreen.matches) {
+	 				 scaleFactor = 1.5;
+					 bgScaleFactor = 1.6;
+	 		} else if (mqMiddle.matches) {
+	 				 scaleFactor = 1.2;
+					 bgScaleFactor = 1.3;
 			}
+
+	 		width = width * scaleFactor;
+	 	 	height = height * scaleFactor;
+		 	backgroundScale = backgroundScale * bgScaleFactor
+
+
+
+
+			 if (mq.matches){
+
+				canvas.setWidth("220")
+				canvas.setHeight("850")
+
+ 				let text = document.getElementsByClassName('Toolbox')[0]
+ 				let header = document.getElementsByClassName('Header')[0]
+ 				let colors = document.getElementsByClassName('Colors')[0]
+				let center = canvas.getCenter();
+
+ 				this.insertAfter(header,text)
+ 				this.insertAfter(text,colors)
+
+ 				imageMobile.onload = function(){
+ 				 canvas.setBackgroundImage(new fabric.Image(imageMobile,{
+ 					 scaleX:0.235,
+ 					 scaleY:0.235,
+ 					 top: center.top,
+ 					 left: center.left,
+ 					 originX: 'center',
+ 					 originY: 'center'
+ 				 }),canvas.renderAll.bind(canvas));
+ 			 }
+ 		 } else {
+
+			canvas.setWidth(width);
+			canvas.setHeight(height);
+
+
+				let center = canvas.getCenter();
+
+
+ 			imageDesktop.onload = function(){
+ 			 canvas.setBackgroundImage(new fabric.Image(imageDesktop,{
+ 				 scaleX:backgroundScale,
+ 				 scaleY:backgroundScale,
+ 				 top: center.top,
+ 				 left: center.left,
+ 				 originX: 'center',
+ 				 originY: 'center'
+ 			 }),canvas.renderAll.bind(canvas));
+ 		 }
+
+	 	}
+
+
 
 
 
 			canvas.on('object:added',this.handleUrl)
 
+
 	 }
+
+
 
 	 insertAfter = (referenceNode, newNode) => {
 		 referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 
 	 }
+
+
 	 handleUrl = () =>  {
 
 		let userStatue = document.getElementById('main-canvas').toDataURL();
@@ -177,6 +222,7 @@ class MainCanvas extends Component {
 
 		render() {
 		    return(
+
 		      <div className="Canvas">
 					<div className="Icon"></div>
 
@@ -185,23 +231,9 @@ class MainCanvas extends Component {
 
 
 
-						 <MediaQuery minWidth={1700} >
-  						 <canvas width="900" height="850" id= 'main-canvas'> </canvas>
-  					 </MediaQuery>
+					<canvas  id= 'main-canvas'> </canvas>
 
 
-					 <MediaQuery minWidth={1100} maxWidth={1700}>
-						 <canvas width="500" height="450" id= 'main-canvas'> </canvas>
-					 </MediaQuery>
-
-
-					 <MediaQuery minWidth={500} maxWidth={1100}>
-						 <canvas width="500" height="450" id= 'main-canvas'> </canvas>
-					 </MediaQuery>
-
-					<MediaQuery maxWidth={500}>
-						<canvas width="220" height="850" id= 'main-canvas'> </canvas>
-					</MediaQuery>
 
 
 					<div className="Colors">
@@ -242,6 +274,7 @@ class MainCanvas extends Component {
 
 
 		      </div>
+
 		    )
 		 }
 }
