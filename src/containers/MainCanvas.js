@@ -7,7 +7,6 @@ import { connect } from "react-redux";
 import MediaQuery from 'react-responsive';
 import { push } from 'react-router-redux'
 import './Canvas.css'
-import ReactResizeDetector from 'react-resize-detector';
 
 
 
