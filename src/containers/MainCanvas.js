@@ -105,8 +105,8 @@ class MainCanvas extends Component {
 			 if(mqTablet.matches) {
 	 				 scaleFactor = 0.9;
 	 		} else if (mqBigScreen.matches) {
-	 				 scaleFactor = 1.5;
-					 bgScaleFactor = 1.6;
+	 				 scaleFactor = 1.4;
+					 bgScaleFactor = 1.4;
 	 		} else if (mqMiddle.matches) {
 	 				 scaleFactor = 1.2;
 					 bgScaleFactor = 1.3;

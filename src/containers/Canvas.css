@@ -5,6 +5,8 @@
 }
 
 
+
+
 .Icon {
 	position: fixed;
 	top: 30px;
@@ -19,12 +21,16 @@
 
 }
 
+.canvas-container {
+	margin: 0 auto;
+}
+
 .Header {
 	margin: 0px auto;
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 	width: 100% !important;
 	text-align: center;
-	height: 60px;
+	height: 80px;
 	background-image: url('../title.jpg') !important;
 	background-size: contain !important;
 	background-position: center;
@@ -96,7 +102,7 @@
 	position: relative;
 	display: inline-block;
 	margin: 0px auto !important;
-	width: 450px ;
+	width: 500px ;
 
 }
 
@@ -158,11 +164,11 @@ canvas:hover {
 		width: 600px;
 	}
 
-	.Colors > div {
-		width: 50px;
-		height: 50px;
+	/* .Colors > div {
+		width: 40px;
+		height: 40px;
 		margin: 14px;
-	}
+	} */
 }
 @media only screen and (max-width: 500px) {
 		.Icon {
@@ -183,13 +189,8 @@ canvas:hover {
 		}
 
 		.canvas-container {
-			margin: 0 auto;
 			text-align: center;
 			width: 100%;
-
-			/* -webkit-transform : scale(0.5);
-			-webkit-transform-origin : 0 0; */
-
 		}
 
 		.Toolbox {
@@ -243,28 +244,26 @@ canvas:hover {
 
 	}
 
-	.canvas-container {
-		margin: 0 auto;
-	}
 
-	.Colors {
-		bottom: -150px;
-	}
+	/* .Colors {
+		bottom: -100px;
+	} */
 
-	.Colors > div {
+	/* .Colors > div {
 		width: 55px;
 		height: 55px;
 		margin: 14px;
-	}
+	} */
 
 	.Toolbox {
-		bottom:250px;
-		right: 0px;
+		bottom:200px;
+		right: 60px;
 		width: 320px;
 	}
 
 	.Header {
-		height: 120px;
+		height: 80px;
+		margin-bottom: 50px;
 
 	}
 	.Actions > div p {
