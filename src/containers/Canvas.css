@@ -239,7 +239,7 @@ canvas:hover {
 
 @media only screen and (min-width: 1824px) {
 	.Canvas {
-		margin-top: 50px !important;
+		/* margin-top: 50px !important; */
 		width: 1700px;
 
 	}
