@@ -41,15 +41,15 @@
 
 .Colors {
 	position: absolute;
-	bottom: -90px;
+	bottom: -80px;
 	left: 0;
 	right: 0;
 
 }
 
 .Colors > div {
-	width: 35px;
-	height: 35px;
+	width: 25px;
+	height: 25px;
 	display: inline-block;
 	margin: 5px;
 	border-radius: 50%;
@@ -102,7 +102,7 @@
 	position: relative;
 	display: inline-block;
 	margin: 0px auto !important;
-	width: 500px ;
+	width: 550px ;
 
 }
 
@@ -127,27 +127,14 @@ canvas:hover {
 
 @media only screen and (min-width: 500px) and (max-width: 1100px){
 	.Header {
-		margin-bottom: 120px;
+		margin-bottom: 90px;
 		height: 80px;
 	}
 	.Toolbox {
-		position: relative;
-		left: 0;
-		margin: 110px auto;
-		width: 100%;
+		right: -210px !important;
+
 	}
-	.instruction-text {
-		position: relative;
-	}
-	.Colors {
-		bottom: 100px;
-	}
-	.Toolbox p {
-		text-align: center;
-	}
-	.Actions {
-		text-align: center;
-	}
+
 
 }
 @media only screen and (min-width: 1600px) and (max-width: 1824px){

@@ -57,14 +57,14 @@ class MainCanvas extends Component {
 
 	componentDidMount = () =>{
 
-		window.addEventListener('resize', this.handleResize);
+
 
 		console.log(this.props.avatarImage);
-		let width = 500;
+		let width = 550;
 	  let height = 450;
 	  let scaleFactor = 1;
 		let backgroundScale = 0.22;
-		let bgScaleFactor = 1;
+		let bgScaleFactor = 1.19;
 
 
 
@@ -102,8 +102,12 @@ class MainCanvas extends Component {
 			 let mqMiddle = window.matchMedia("screen and (min-width: 1600px) and (max-width: 1824px)");
 			 let mqTablet = window.matchMedia("screen and (min-width: 500px) and (max-width: 1100px)");
 
+			 if (!mq.matches) {
+				 window.addEventListener('resize', this.handleResize);
+			 }
+
 			 if(mqTablet.matches) {
-	 				 scaleFactor = 0.9;
+	 				 scaleFactor = 1;
 	 		} else if (mqBigScreen.matches) {
 	 				 scaleFactor = 1.4;
 					 bgScaleFactor = 1.4;
@@ -120,6 +124,7 @@ class MainCanvas extends Component {
 
 
 			 if (mq.matches){
+				 console.log('here');
 
 				canvas.setWidth("220")
 				canvas.setHeight("850")
@@ -143,6 +148,8 @@ class MainCanvas extends Component {
  				 }),canvas.renderAll.bind(canvas));
  			 }
  		 } else {
+
+
 
 			canvas.setWidth(width);
 			canvas.setHeight(height);
