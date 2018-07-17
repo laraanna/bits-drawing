@@ -81,6 +81,7 @@ class MainCanvas extends Component {
 			 // Make a New Canvas
 			 let canvas = this.the_canvas = new fabric.Canvas('main-canvas', {
 
+
 			 });
 
 
@@ -98,7 +99,8 @@ class MainCanvas extends Component {
 
 			 // let center = canvas.getCenter();
 			 let mq = window.matchMedia("screen and (max-width: 500px)");
-			 let mqBigScreen = window.matchMedia("screen and (min-width: 1824px)");
+			 let mqBigScreen = window.matchMedia("screen and (min-width: 1824px) and (max-width: 1920px)");
+			 let mqXBigScreen = window.matchMedia("screen and (min-width: 1921px) ");
 			 let mqMiddle = window.matchMedia("screen and (min-width: 1600px) and (max-width: 1824px)");
 			 let mqTablet = window.matchMedia("screen and (min-width: 500px) and (max-width: 1100px)");
 
@@ -109,11 +111,14 @@ class MainCanvas extends Component {
 			 if(mqTablet.matches) {
 	 				 scaleFactor = 1;
 	 		} else if (mqBigScreen.matches) {
-	 				 scaleFactor = 1.4;
-					 bgScaleFactor = 1.4;
-	 		} else if (mqMiddle.matches) {
+	 				 scaleFactor = 1.5;
+					 bgScaleFactor = 1.5;
+	 		} else if (mqXBigScreen.matches) {
+	 				 scaleFactor = 1.8;
+					 bgScaleFactor = 1.8;
+			}  else if (mqMiddle.matches) {
 	 				 scaleFactor = 1.2;
-					 bgScaleFactor = 1.3;
+					 bgScaleFactor = 1.2;
 			}
 
 	 		width = width * scaleFactor;
@@ -150,9 +155,8 @@ class MainCanvas extends Component {
  		 } else {
 
 
-
-			canvas.setWidth(width);
-			canvas.setHeight(height);
+			 canvas.setHeight(height);
+			 canvas.setWidth(width);
 
 
 				let center = canvas.getCenter();
@@ -237,7 +241,7 @@ class MainCanvas extends Component {
 
 
 
-					<canvas  id= 'main-canvas'> </canvas>
+					<canvas  id= 'main-canvas' > </canvas>
 
 
 
@@ -258,11 +262,11 @@ class MainCanvas extends Component {
 
 					<MediaQuery query='(min-device-width: 600px)'>
 
-					<p className="instruction-text">Use your cursor to <b>draw</b> your perfect pair of undies.<br/><span>Hit save to submit.</span></p>
+					<p className="instruction-text">Use your cursor to <b>draw</b> the perfect pair of undies.<br/><span>Hit save to submit.</span></p>
 					</MediaQuery>
 
 					<MediaQuery query='(max-device-width: 600px)'>
-					<p className="instruction-text">Use your fingertip to <b>draw</b> your perfect pair of undies.<br/><span>Hit save to submit.</span></p>
+					<p className="instruction-text">Use your fingertip to <b>draw</b> the perfect pair of undies.<br/><span>Hit save to submit.</span></p>
 					</MediaQuery>
 
 					<div className="Actions">
