@@ -40,14 +40,7 @@
 
 
 .Colors {
-	/* position: absolute;
-	bottom: -80px;
-	left: 0;
-	right: 0; */
-	position: fixed;
-	bottom: 30px;
-	left: 0;
-	right: 0;
+	margin-top: 25px;
 
 }
 
@@ -112,7 +105,7 @@
 
 .Toolbox {
 	position: absolute;
-	bottom:100px;
+	bottom:125px;
 	right: -280px;
 	width: 220px;
 }
