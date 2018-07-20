@@ -196,9 +196,8 @@ canvas:hover {
 			margin-top: 0;
 
 		}
-		.Actions > div:nth-child(2) {
-			/* margin-left: 10px;
-			margin-right: 10px; */
+		.Actions > div:nth-child(1) {
+			margin-left: 20px;
 		}
 		.Actions {
 			margin: 0 auto;
