@@ -10,13 +10,13 @@
 .Icon {
 	position: fixed;
 	top: 30px;
-	left: 30px;
-	width: 150px;
+	left: 40px;
+	width: 90px;
 	height: 150px;
 	/* border: 2px solid blue; */
-	background-image: url('https://res.cloudinary.com/laraanna/image/upload/v1530461949/icon.png') !important;
+	background-image: url('https://res.cloudinary.com/laraanna/image/upload/v1532109371/icon.png') !important;
 	background-size: contain !important;
-	background-position: center;
+	background-position: left center;
 	background-repeat: no-repeat !important;
 
 }
@@ -40,8 +40,12 @@
 
 
 .Colors {
-	position: absolute;
+	/* position: absolute;
 	bottom: -80px;
+	left: 0;
+	right: 0; */
+	position: fixed;
+	bottom: 30px;
 	left: 0;
 	right: 0;
 
@@ -147,9 +151,9 @@ canvas:hover {
 		height: 80px;
 	}
 
-	.Colors {
+	/* .Colors {
 		bottom: -140px;
-	}
+	} */
 
 	.Canvas {
 		width: 600px;
@@ -228,28 +232,23 @@ canvas:hover {
 
 }
 
-@media only screen and (min-width: 1824px) {
+@media only screen and (min-width: 1824px)  and (max-width: 1920px){
 	.Canvas {
 		/* margin-top: 50px !important; */
 		width: 1700px;
 
 	}
 
-
 	/* .Colors {
-		bottom: -100px;
-	} */
+		bottom: -50px;
 
-	/* .Colors > div {
-		width: 55px;
-		height: 55px;
-		margin: 14px;
+
 	} */
 
 	.Toolbox {
 		bottom:200px;
 		right: 60px;
-		width: 320px;
+		width: 220px;
 	}
 
 	.Header {
@@ -266,5 +265,41 @@ canvas:hover {
 	.Toolbox p {
 		font-size: 18px;
 	}
+
+}
+
+
+@media only screen and (min-width: 1921px) {
+	.Canvas {
+		/* margin-top: 50px !important; */
+		width: 1700px;
+
+	}
+
+	.Toolbox {
+		bottom:200px;
+		right: 60px;
+		width: 220px;
+	}
+
+	.Header {
+		height: 80px;
+		margin-bottom: 50px;
+
+	}
+	.Actions > div p {
+		font-size: 16px;
+		/* margin-bottom: 2px; */
+
+	}
+
+	.Toolbox p {
+		font-size: 18px;
+	}
+
+
+
+
+
 
 }

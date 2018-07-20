@@ -114,8 +114,8 @@ class MainCanvas extends Component {
 	 				 scaleFactor = 1.5;
 					 bgScaleFactor = 1.5;
 	 		} else if (mqXBigScreen.matches) {
-	 				 scaleFactor = 1.8;
-					 bgScaleFactor = 1.8;
+	 				 scaleFactor = 1.95;
+					 bgScaleFactor = 1.95;
 			}  else if (mqMiddle.matches) {
 	 				 scaleFactor = 1.2;
 					 bgScaleFactor = 1.2;
@@ -276,6 +276,8 @@ class MainCanvas extends Component {
 					</div>
 
 					</div>
+
+					 <a href="http://www.google.com" target="_blank"><div className="insta"></div></a>
 
 
 

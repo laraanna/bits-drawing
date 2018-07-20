@@ -5,11 +5,12 @@
 
 
 .ThankYou {
+	margin: 0 !important;
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: 90vh;
 	display:block;
-	overflow-y: hidden;
+	overflow-y: hidden !important;
 }
 
 .ThankYou .wrapper{
@@ -43,16 +44,43 @@
 }
 
 .ThankYou .wrapper div {
-	display: none;
+	/* display: none; */
 
 
 }
 
+.insta {
+	position: fixed;
+	bottom: 30px;
+	left: 65px;
+	width: 40px;
+	height: 40px;
+	background-image: url('../img_logo_insta.png');
+	background-size: contain ;
+	background-position: center;
+	background-repeat: no-repeat ;
+}
+
+.backArrow {
+	display: inline-block;
+	width: 40px;
+	height: 35px;
+	background-image: url('../img_arrow_back_1.png');
+	background-size: contain ;
+	background-position: center;
+	background-repeat: no-repeat ;
+
+}
+
+.backArrow:hover, .insta:hover {
+	cursor: pointer;
+}
+
 @media only screen and (min-width: 1824px) {
 	.ThankYou .wrapper img {
-		/* max-height: 100%;
-		max-width: 100%; */
-		width: 700px;
+		max-height: 100%;
+		max-width: 100%;
+		/* width: 700px; */
 		height: auto;
 		margin-top: -50px;
 	}
