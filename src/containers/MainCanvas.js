@@ -277,7 +277,7 @@ class MainCanvas extends Component {
 
 					</div>
 
-					 <a href="http://www.google.com" target="_blank"><div className="insta"></div></a>
+					 <a href="http://www.instagram.com/bitsbodywear" target="_blank"><div className="insta"></div></a>
 
 
 

@@ -18,7 +18,7 @@ class ThankYou extends Component {
 					<img src="https://res.cloudinary.com/laraanna/image/upload/v1530458969/JakeCat2.gif" alt="cat" />
 					<p>Thank you!</p>
 					<div className="backArrow" onClick={this.goBack}></div>
-					 <a href="http://www.google.com" target="_blank"><div className="insta"></div></a>
+					 <a href="http://www.instagram.com/bitsbodywear" target="_blank"><div className="insta"></div></a>
 				</div>
       </div>
     );
