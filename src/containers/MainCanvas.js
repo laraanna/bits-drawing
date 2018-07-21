@@ -271,13 +271,15 @@ class MainCanvas extends Component {
 					<p className="instruction-text">Use your fingertip to <b>draw</b> the perfect pair of undies.<br/><span>Hit save to submit.</span></p>
 					</MediaQuery>
 
+					<a href="http://www.instagram.com/bitsbodywear" target="_blank"><div className="instaMain"></div></a>
+
 					<div className="Actions">
 						<div onClick={this.clear}><p>CLEAR</p></div>
 						<div onClick={this.undo}><p>UNDO</p></div>
 						<div onClick={this.save}><p>SAVE</p></div>
 					</div>
 
-					<a href="http://www.instagram.com/bitsbodywear" target="_blank"><div className="instaMain"></div></a>
+
 
 					</div>
 
