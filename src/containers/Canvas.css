@@ -5,7 +5,19 @@
 }
 
 
-
+.instaMain {
+	position: fixed;
+	bottom: 30px;
+	left: 65px;
+	/* position: relative;
+	margin: 0 auto; */
+	width: 40px;
+	height: 40px;
+	background-image: url('../img_logo_insta.png');
+	background-size: contain ;
+	background-position: center;
+	background-repeat: no-repeat ;
+}
 
 .Icon {
 	position: fixed;
@@ -159,6 +171,19 @@ canvas:hover {
 	} */
 }
 @media only screen and (max-width: 500px) {
+
+	.instaMain {
+		position: relative;
+		margin: 0 auto;
+		bottom: 0px;
+		left: 0px;
+		width: 40px;
+		height: 40px;
+		background-image: url('../img_logo_insta.png');
+		background-size: contain ;
+		background-position: center;
+		background-repeat: no-repeat ;
+	}
 		.Icon {
 			display: none;
 
@@ -202,12 +227,13 @@ canvas:hover {
 		.Actions {
 			margin: 0 auto;
 			text-align: center;
+			margin-bottom: 20px;
 		}
 
 		.Colors {
 			position: relative;
 			bottom: 0px;
-			margin-top: -80px;
+			margin-top: -100px;
 		}
 
 		.instruction-text {
@@ -287,6 +313,12 @@ canvas:hover {
 
 	.Toolbox p {
 		font-size: 18px;
+	}
+
+	.instaMain {
+		width: 60px;
+		height: 60px;
+		left: 45px;
 	}
 
 

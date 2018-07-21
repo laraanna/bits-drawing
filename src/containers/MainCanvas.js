@@ -260,6 +260,8 @@ class MainCanvas extends Component {
 
 					<div className="Toolbox">
 
+
+
 					<MediaQuery query='(min-device-width: 600px)'>
 
 					<p className="instruction-text">Use your cursor to <b>draw</b> the perfect pair of undies.<br/><span>Hit save to submit.</span></p>
@@ -275,9 +277,13 @@ class MainCanvas extends Component {
 						<div onClick={this.save}><p>SAVE</p></div>
 					</div>
 
+					<a href="http://www.instagram.com/bitsbodywear" target="_blank"><div className="instaMain"></div></a>
+
 					</div>
 
-					 <a href="http://www.instagram.com/bitsbodywear" target="_blank"><div className="insta"></div></a>
+
+
+
 
 
 
