@@ -65,7 +65,8 @@
 	display: inline-block;
 	width: 40px;
 	height: 35px;
-	background-image: url('../img_arrow_back_1.png');
+	background-image: url('../img_arrow_back_4.png');
+	transform: rotate(180deg);
 	background-size: contain ;
 	background-position: center;
 	background-repeat: no-repeat ;
