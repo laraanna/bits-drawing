@@ -23,6 +23,7 @@ class Canvas extends PureComponent {
     return (
 			<div>
 				<img className="Generated-Statue" key={index} src= {statue.url}/>
+				<p>{statue._id}</p>
 			</div>
 
 		)
@@ -33,7 +34,6 @@ class Canvas extends PureComponent {
 		const {statues} = this.props
     return (
       <div className="Gallary">
-			<p>hi</p>
 
 
 			{statues.map(this.renderStatues)}

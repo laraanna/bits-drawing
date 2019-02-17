@@ -8,7 +8,7 @@
 .instaMain {
 	position: fixed;
 	bottom: 30px;
-	left: 65px;
+	left: 75px;
 	/* position: relative;
 	margin: 0 auto; */
 	width: 40px;
@@ -22,11 +22,11 @@
 .Icon {
 	position: fixed;
 	top: 30px;
-	left: 40px;
+	left: 50px;
 	width: 90px;
 	height: 150px;
 	/* border: 2px solid blue; */
-	background-image: url('http://res.cloudinary.com/laraanna/image/upload/v1532272423/Flower_in_vase_color.png') !important;
+	background-image: url('https://res.cloudinary.com/laraanna/image/upload/v1550418355/Bits_Pear.png') !important;
 	background-size: contain !important;
 	background-position: left center;
 	background-repeat: no-repeat !important;
@@ -43,7 +43,7 @@
 	width: 100% !important;
 	text-align: center;
 	height: 70px;
-	background-image: url('../title.jpg') !important;
+	background-image: url('../bitslogo.png') !important;
 	background-size: contain !important;
 	background-position: center;
 	background-repeat: no-repeat !important;
@@ -57,8 +57,8 @@
 }
 
 .Colors > div {
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 	display: inline-block;
 	margin: 5px;
 	border-radius: 50%;

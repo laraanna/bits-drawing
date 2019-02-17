@@ -15,11 +15,12 @@ const data1 = [
   { name: 'two' },
   { name: 'three' },
   { name: 'four' },
-	{ name: 'five' }
+	{ name: 'five' },
+  { name: 'six' }
 ];
 
 
-const colors = ["#EFE9ED", "#E8AF9F", "#C34537", "#A0985F", "#718A9A"]
+const colors = ["#D3C2C3", "#8290A2", "#B76536", "#5B9E87", "#9894D4", "#D2A046"]
 
 const breakpoints = {
 		desktop: 1040,

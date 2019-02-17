@@ -12,6 +12,7 @@ export default class Routes extends Component {
       <div>
         <Route exact path="/" component={MainCanvas} />
 				<Route path="/thankyou" component={ThankYou} />
+				{/* <Route path="/gallary" component={Gallary} /> */}
       </div>
     )
   }
